@@ -51,6 +51,7 @@
       <AssemblyReference>UiPath.Mail</AssemblyReference>
       <AssemblyReference>UiPath.CV</AssemblyReference>
       <AssemblyReference>System.Runtime.Serialization</AssemblyReference>
+      <AssemblyReference>System.ServiceModel</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
   <Flowchart sap:VirtualizedContainerService.HintSize="648,878" sap2010:WorkflowViewState.IdRef="Flowchart_1">
@@ -70,17 +71,17 @@
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
     <Flowchart.StartNode>
-      <x:Reference>__ReferenceID8</x:Reference>
+      <x:Reference>__ReferenceID9</x:Reference>
     </Flowchart.StartNode>
-    <FlowStep x:Name="__ReferenceID8">
+    <FlowStep x:Name="__ReferenceID9">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <av:Point x:Key="ShapeLocation">200,127.5</av:Point>
-          <av:Size x:Key="ShapeSize">200,52</av:Size>
+          <av:Size x:Key="ShapeSize">200,51</av:Size>
           <av:PointCollection x:Key="ConnectorLocation">300,179.5 300,229.5</av:PointCollection>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <ui:CommentOut sap:VirtualizedContainerService.HintSize="200,52" sap2010:WorkflowViewState.IdRef="CommentOut_2">
+      <ui:CommentOut sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="CommentOut_2">
         <ui:CommentOut.Body>
           <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="612,1174" sap2010:WorkflowViewState.IdRef="Sequence_4">
             <sap:WorkflowViewStateService.ViewState>
@@ -181,11 +182,11 @@
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <av:Point x:Key="ShapeLocation">200,229.5</av:Point>
-              <av:Size x:Key="ShapeSize">200,52</av:Size>
+              <av:Size x:Key="ShapeSize">200,51</av:Size>
               <av:PointCollection x:Key="ConnectorLocation">300,281.5 300,331.5</av:PointCollection>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <ui:CommentOut sap:VirtualizedContainerService.HintSize="200,52" sap2010:WorkflowViewState.IdRef="CommentOut_4">
+          <ui:CommentOut sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="CommentOut_4">
             <ui:CommentOut.Body>
               <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="659,1189" sap2010:WorkflowViewState.IdRef="Sequence_9">
                 <sap:WorkflowViewStateService.ViewState>
@@ -208,7 +209,7 @@
                       <InArgument x:TypeArguments="x:String">Yes</InArgument>
                     </Assign.Value>
                   </Assign>
-                  <ui:InterruptibleWhile DisplayName="While" sap:VirtualizedContainerService.HintSize="575,782" sap2010:WorkflowViewState.IdRef="InterruptibleWhile_1">
+                  <ui:InterruptibleWhile Condition="[userOption=&quot;Yes&quot;]" DisplayName="While" sap:VirtualizedContainerService.HintSize="575,782" sap2010:WorkflowViewState.IdRef="InterruptibleWhile_1">
                     <ui:InterruptibleWhile.Body>
                       <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="539,615" sap2010:WorkflowViewState.IdRef="Sequence_7">
                         <sap:WorkflowViewStateService.ViewState>
@@ -230,9 +231,6 @@
                         <ui:MessageBox Caption="{x:Null}" Buttons="YesNo" ChosenButton="[userOption]" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="497,59" sap2010:WorkflowViewState.IdRef="MessageBox_9" Text="[&quot;Do you wish to continue?&quot;]" />
                       </Sequence>
                     </ui:InterruptibleWhile.Body>
-                    <ui:InterruptibleWhile.Condition>
-                      <mva:VisualBasicValue x:TypeArguments="x:Boolean" ExpressionText="userOption=&quot;Yes&quot;" />
-                    </ui:InterruptibleWhile.Condition>
                   </ui:InterruptibleWhile>
                   <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="575,52" sap2010:WorkflowViewState.IdRef="CommentOut_3">
                     <ui:CommentOut.Body>
@@ -292,11 +290,11 @@
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <av:Point x:Key="ShapeLocation">200,331.5</av:Point>
-                  <av:Size x:Key="ShapeSize">200,68</av:Size>
-                  <av:PointCollection x:Key="ConnectorLocation">300,399.5 300,449.5</av:PointCollection>
+                  <av:Size x:Key="ShapeSize">200,66</av:Size>
+                  <av:PointCollection x:Key="ConnectorLocation">300,397.5 300,449.5</av:PointCollection>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
-              <Sequence DisplayName="Get User Option" sap:VirtualizedContainerService.HintSize="200,68" sap2010:WorkflowViewState.IdRef="Sequence_10">
+              <Sequence DisplayName="Get User Option" sap:VirtualizedContainerService.HintSize="200,66" sap2010:WorkflowViewState.IdRef="Sequence_10">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -309,10 +307,7 @@
                 </ui:InputDialog>
               </Sequence>
               <FlowStep.Next>
-                <FlowSwitch x:TypeArguments="x:String" x:Name="__ReferenceID4" DisplayName="Flow Switch" sap:VirtualizedContainerService.HintSize="70,87" sap2010:WorkflowViewState.IdRef="FlowSwitch`1_1">
-                  <FlowSwitch.Expression>
-                    <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="customerCategory" />
-                  </FlowSwitch.Expression>
+                <FlowSwitch x:TypeArguments="x:String" x:Name="__ReferenceID4" DisplayName="Flow Switch" Expression="[customerCategory]" sap:VirtualizedContainerService.HintSize="70,87" sap2010:WorkflowViewState.IdRef="FlowSwitch`1_1">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <av:Point x:Key="ShapeLocation">265,449.5</av:Point>
@@ -326,21 +321,21 @@
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <av:Point x:Key="ShapeLocation">380,484</av:Point>
-                        <av:Size x:Key="ShapeSize">200,52</av:Size>
+                        <av:Size x:Key="ShapeSize">200,51</av:Size>
                         <av:PointCollection x:Key="ConnectorLocation">580,510 610,510 610,671.5 400,671.5</av:PointCollection>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
-                    <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="200,52" sap2010:WorkflowViewState.IdRef="MessageBox_14" Text="[&quot;Customer age is between 18 and 55&quot;]" />
+                    <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="MessageBox_14" Text="[&quot;Customer age is between 18 and 55&quot;]" />
                     <FlowStep.Next>
                       <FlowStep x:Name="__ReferenceID1">
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                             <av:Point x:Key="ShapeLocation">200,637.5</av:Point>
-                            <av:Size x:Key="ShapeSize">200,68</av:Size>
-                            <av:PointCollection x:Key="ConnectorLocation">300,705.5 300,755.5</av:PointCollection>
+                            <av:Size x:Key="ShapeSize">200,66</av:Size>
+                            <av:PointCollection x:Key="ConnectorLocation">300,703.5 300,755.5</av:PointCollection>
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
-                        <Sequence DisplayName="Get User Confirmation" sap:VirtualizedContainerService.HintSize="376,275" sap2010:WorkflowViewState.IdRef="Sequence_13">
+                        <Sequence DisplayName="Get User Confirmation" sap:VirtualizedContainerService.HintSize="200,66" sap2010:WorkflowViewState.IdRef="Sequence_13">
                           <sap:WorkflowViewStateService.ViewState>
                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
                               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -359,21 +354,33 @@
                           </ui:RemoveLogFields>
                         </Sequence>
                         <FlowStep.Next>
-                          <FlowDecision x:Name="__ReferenceID3" DisplayName="Flow Decision" sap:VirtualizedContainerService.HintSize="79,87" sap2010:WorkflowViewState.IdRef="FlowDecision_1">
-                            <FlowDecision.Condition>
-                              <mva:VisualBasicValue x:TypeArguments="x:Boolean" ExpressionText="userOption=&quot;Yes&quot;" />
-                            </FlowDecision.Condition>
+                          <FlowDecision x:Name="__ReferenceID3" Condition="[userOption=&quot;Yes&quot;]" DisplayName="Flow Decision" sap:VirtualizedContainerService.HintSize="79,87" sap2010:WorkflowViewState.IdRef="FlowDecision_1" True="{x:Reference __ReferenceID0}">
                             <sap:WorkflowViewStateService.ViewState>
                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                 <av:Point x:Key="ShapeLocation">260.5,755.5</av:Point>
                                 <av:Size x:Key="ShapeSize">79,87</av:Size>
                                 <av:PointCollection x:Key="TrueConnector">260.5,799 170,799 170,365.5 200,365.5</av:PointCollection>
+                                <av:PointCollection x:Key="FalseConnector">339.5,799 369.5,799 369.5,790 410,790</av:PointCollection>
                               </scg:Dictionary>
                             </sap:WorkflowViewStateService.ViewState>
-                            <FlowDecision.True>
-                              <x:Reference>__ReferenceID0</x:Reference>
-                            </FlowDecision.True>
+                            <FlowDecision.False>
+                              <FlowStep x:Name="__ReferenceID8">
+                                <sap:WorkflowViewStateService.ViewState>
+                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                    <av:Point x:Key="ShapeLocation">410,764.5</av:Point>
+                                    <av:Size x:Key="ShapeSize">200,51</av:Size>
+                                  </scg:Dictionary>
+                                </sap:WorkflowViewStateService.ViewState>
+                                <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="MessageBox_17" Text="[&quot;&quot;]">
+                                  <sap:WorkflowViewStateService.ViewState>
+                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                    </scg:Dictionary>
+                                  </sap:WorkflowViewStateService.ViewState>
+                                </ui:MessageBox>
+                              </FlowStep>
+                            </FlowDecision.False>
                           </FlowDecision>
                         </FlowStep.Next>
                       </FlowStep>
@@ -383,11 +390,11 @@
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <av:Point x:Key="ShapeLocation">380,414</av:Point>
-                        <av:Size x:Key="ShapeSize">200,52</av:Size>
+                        <av:Size x:Key="ShapeSize">200,51</av:Size>
                         <av:PointCollection x:Key="ConnectorLocation">580,440 610,440 610,671.5 400,671.5</av:PointCollection>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
-                    <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="200,52" sap2010:WorkflowViewState.IdRef="MessageBox_16" Text="[&quot;Customer age is greater than 55&quot;]" />
+                    <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="MessageBox_16" Text="[&quot;Customer age is greater than 55&quot;]" />
                     <FlowStep.Next>
                       <x:Reference>__ReferenceID1</x:Reference>
                     </FlowStep.Next>
@@ -396,11 +403,11 @@
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <av:Point x:Key="ShapeLocation">380,554</av:Point>
-                        <av:Size x:Key="ShapeSize">200,52</av:Size>
+                        <av:Size x:Key="ShapeSize">200,51</av:Size>
                         <av:PointCollection x:Key="ConnectorLocation">580,580 610,580 610,671.5 400,671.5</av:PointCollection>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
-                    <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="200,52" sap2010:WorkflowViewState.IdRef="MessageBox_15" Text="[&quot;Customer age is less than 18&quot;]" />
+                    <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="MessageBox_15" Text="[&quot;Customer age is less than 18&quot;]" />
                     <FlowStep.Next>
                       <x:Reference>__ReferenceID1</x:Reference>
                     </FlowStep.Next>
@@ -420,5 +427,6 @@
     <x:Reference>__ReferenceID5</x:Reference>
     <x:Reference>__ReferenceID6</x:Reference>
     <x:Reference>__ReferenceID7</x:Reference>
+    <x:Reference>__ReferenceID8</x:Reference>
   </Flowchart>
 </Activity>
