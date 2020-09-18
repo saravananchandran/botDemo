@@ -83,13 +83,13 @@
       </sap:WorkflowViewStateService.ViewState>
       <ui:CommentOut sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="CommentOut_2">
         <ui:CommentOut.Body>
-          <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="612,1174" sap2010:WorkflowViewState.IdRef="Sequence_4">
+          <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="612,1171" sap2010:WorkflowViewState.IdRef="Sequence_4">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <Sequence DisplayName="Read Excel Data" sap:VirtualizedContainerService.HintSize="570,1082" sap2010:WorkflowViewState.IdRef="Sequence_2">
+            <Sequence DisplayName="Read Excel Data" sap:VirtualizedContainerService.HintSize="570,1079" sap2010:WorkflowViewState.IdRef="Sequence_2">
               <Sequence.Variables>
                 <Variable x:TypeArguments="sd:DataTable" Name="customerDT" />
                 <Variable x:TypeArguments="x:String" Name="customerSex" />
@@ -100,27 +100,27 @@
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
               <ui:ReadRange Range="{x:Null}" AddHeaders="True" DataTable="[customerDT]" DisplayName="Read Range" sap:VirtualizedContainerService.HintSize="528,87" sap2010:WorkflowViewState.IdRef="ReadRange_1" SheetName="Sheet1" WorkbookPath="C:\Users\FA SOFTWARES\Documents\UiPath\RpaSessionDay1\Test.xlsx" />
-              <ui:ForEachRow CurrentIndex="{x:Null}" DataTable="[customerDT]" DisplayName="For Each Row" sap:VirtualizedContainerService.HintSize="528,863" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
+              <ui:ForEachRow CurrentIndex="{x:Null}" DataTable="[customerDT]" DisplayName="For Each Row" sap:VirtualizedContainerService.HintSize="528,860" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
                 <ui:ForEachRow.Body>
                   <ActivityAction x:TypeArguments="sd:DataRow">
                     <ActivityAction.Argument>
                       <DelegateInArgument x:TypeArguments="sd:DataRow" Name="rowCustomer" />
                     </ActivityAction.Argument>
-                    <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="478,715" sap2010:WorkflowViewState.IdRef="Sequence_1">
+                    <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="478,713" sap2010:WorkflowViewState.IdRef="Sequence_1">
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
-                      <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="436,222" sap2010:WorkflowViewState.IdRef="CommentOut_1">
+                      <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="436,221" sap2010:WorkflowViewState.IdRef="CommentOut_1">
                         <ui:CommentOut.Body>
-                          <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="242,144" sap2010:WorkflowViewState.IdRef="Sequence_3">
+                          <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="242,143" sap2010:WorkflowViewState.IdRef="Sequence_3">
                             <sap:WorkflowViewStateService.ViewState>
                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                               </scg:Dictionary>
                             </sap:WorkflowViewStateService.ViewState>
-                            <If Condition="[rowCustomer(&quot;Sex&quot;).ToString=&quot;Male&quot; Or rowCustomer(&quot;Sex&quot;).ToString.ToUpper=&quot;M&quot;]" sap:VirtualizedContainerService.HintSize="200,52" sap2010:WorkflowViewState.IdRef="If_1">
+                            <If Condition="[rowCustomer(&quot;Sex&quot;).ToString=&quot;Male&quot; Or rowCustomer(&quot;Sex&quot;).ToString.ToUpper=&quot;M&quot;]" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="If_1">
                               <sap:WorkflowViewStateService.ViewState>
                                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                   <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -168,7 +168,7 @@
                         </Assign.Value>
                       </Assign>
                       <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="436,59" sap2010:WorkflowViewState.IdRef="MessageBox_1" Text="[rowCustomer(&quot;Name&quot;).ToString+&quot; is a &quot;+customerSex]" />
-                      <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="436,62" sap2010:WorkflowViewState.IdRef="WriteLine_1" Text="[rowCustomer(&quot;Name&quot;).ToString+&quot; is a &quot;+customerSex]" />
+                      <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="436,61" sap2010:WorkflowViewState.IdRef="WriteLine_1" Text="[rowCustomer(&quot;Name&quot;).ToString+&quot; is a &quot;+customerSex]" />
                     </Sequence>
                   </ActivityAction>
                 </ui:ForEachRow.Body>
@@ -291,7 +291,7 @@
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <av:Point x:Key="ShapeLocation">200,331.5</av:Point>
                   <av:Size x:Key="ShapeSize">200,66</av:Size>
-                  <av:PointCollection x:Key="ConnectorLocation">300,397.5 300,449.5</av:PointCollection>
+                  <av:PointCollection x:Key="ConnectorLocation">300,397.5 300,427.5 250,427.5 250,446.5</av:PointCollection>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
               <Sequence DisplayName="Get User Option" sap:VirtualizedContainerService.HintSize="200,66" sap2010:WorkflowViewState.IdRef="Sequence_10">
@@ -310,11 +310,11 @@
                 <FlowSwitch x:TypeArguments="x:String" x:Name="__ReferenceID4" DisplayName="Flow Switch" Expression="[customerCategory]" sap:VirtualizedContainerService.HintSize="70,87" sap2010:WorkflowViewState.IdRef="FlowSwitch`1_1">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                      <av:Point x:Key="ShapeLocation">265,449.5</av:Point>
+                      <av:Point x:Key="ShapeLocation">215,446.5</av:Point>
                       <av:Size x:Key="ShapeSize">70,87</av:Size>
-                      <av:PointCollection x:Key="Senior CitizenConnector">335,471.25 365,471.25 365,440 380,440</av:PointCollection>
-                      <av:PointCollection x:Key="MajorConnector">335,493 365,493 365,510 380,510</av:PointCollection>
-                      <av:PointCollection x:Key="MinorConnector">335,514.75 365,514.75 365,580 380,580</av:PointCollection>
+                      <av:PointCollection x:Key="Senior CitizenConnector">285,468.25 315,468.25 315,439.5 380,439.5</av:PointCollection>
+                      <av:PointCollection x:Key="MajorConnector">285,490 315,490 315,509.5 380,509.5</av:PointCollection>
+                      <av:PointCollection x:Key="MinorConnector">285,511.75 315,511.75 315,579.5 380,579.5</av:PointCollection>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
                   <FlowStep x:Key="Major" x:Name="__ReferenceID6">
